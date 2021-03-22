@@ -5,25 +5,25 @@
         "labels": {
             "app": "seldon"
         },
-        "name": "seldon-pipeline"
+        "name": "seldon-bert-qa-model"
     },
     "spec": {
         "annotations": {
-            "project_name": "seldon-pipeline",
+            "project_name": "seldon-bert-qa-model",
             "deployment_version": "0.1.0",
             "seldon.io/rest-read-timeout": "100000",
             "seldon.io/rest-connection-timeout": "100000",
             "seldon.io/grpc-read-timeout": "100000"
         },
-        "name": "seldon-pipeline",
+        "name": "seldon-bert-qa-model",
         "oauth_key": "oauth-key",
         "oauth_secret": "oauth-secret",
         "predictors": [{
             "componentSpecs": [{
                 "spec": {
                     "containers": [{
-                            "name": "sentiment-analysis",
-                            "image": "subhraj07/sentiment-analysis:0.1.0",
+                            "name": "bert-qa-model",
+                            "image": "subhraj07/bert-qa-model",
                             "imagePullPolicy": "Always"
                         }
                     ],
@@ -32,7 +32,7 @@
             }],
             "graph": {
                 "children": [],
-                "name": "sentiment-analysis",
+                "name": "bert-qa-model",
                 "endpoint": {
                     "type": "REST"
                 },

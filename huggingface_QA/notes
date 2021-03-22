@@ -1,8 +1,8 @@
 # /bin/bash
 kubectl create namespace seldon
 kubectl label namespace seldon istio-injection=enabled
-s2i build . seldonio/seldon-core-s2i-python37:1.7.0-dev subhraj07/custom-model
-docker push subhraj07/custom-model
+s2i build . seldonio/seldon-core-s2i-python37:1.7.0-dev subhraj07/bert-qa-model
+docker push subhraj07/bert-qa-model
 kubectl delete -f deploy.json -n seldon
 kubectl apply -f deploy.json -n seldon
 kubectl get po -n seldon -w
